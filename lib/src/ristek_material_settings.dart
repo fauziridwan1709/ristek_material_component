@@ -1,13 +1,9 @@
 // Created by Muhamad Fauzi Ridwan on 04/11/21.
 
-import 'package:flutter/material.dart';
-
 class RistekMaterialSettings {
-  static ThemeData _themeData = ThemeData();
+  static String? appName;
 
-  static void loadSetting(ThemeData data) {
-    _themeData = data;
+  static void loadSetting({String? appName}) {
+    RistekMaterialSettings.appName = appName;
   }
-
-  static ThemeData theme = _themeData;
 }

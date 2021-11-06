@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:ristek_material_component/ristek_material_component.dart';
 
 class AutoLayoutButton extends StatelessWidget {
   const AutoLayoutButton({
@@ -23,7 +22,7 @@ class AutoLayoutButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final enabled = onTap != null;
-    final theme = RistekMaterialSettings.theme;
+    final theme = Theme.of(context);
     return Container(
       height: 40,
       width: double.infinity,
