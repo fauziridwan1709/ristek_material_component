@@ -7,18 +7,20 @@ enum InitializerDelay {
   sec15,
 }
 
-///initializer with refresh indicatorKey
+/// An initializer with refresh indicatorKey.
 class Initializer {
-  Initializer(
-      {required ReactiveModel reactiveModel,
-      required String cacheKey,
-      required this.rIndicator,
-      required this.state,
-      this.delay = InitializerDelay.sec15})
-      : assert(cacheKey != ''),
+  /// Creates an [Initializer].
+  Initializer({
+    required ReactiveModel reactiveModel,
+    required String cacheKey,
+    required this.rIndicator,
+    required this.state,
+    this.delay = InitializerDelay.sec15,
+  })  : assert(cacheKey != ''),
         rm = reactiveModel,
         ck = cacheKey;
 
+  /// The [state] and [rIndicator] arguments must not be null
   ReactiveModel rm;
   String ck;
   GlobalKey<RefreshIndicatorState> rIndicator;

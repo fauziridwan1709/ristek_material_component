@@ -1,5 +1,6 @@
 part of '_base.dart';
 
+/// An abstractions for page which has state management states rebuilder.
 abstract class BaseState<T extends StatefulWidget,
         K extends FutureState<K, dynamic>> extends State<T>
     with Diagnosticable
@@ -8,7 +9,7 @@ abstract class BaseState<T extends StatefulWidget,
   ReactiveModel<K>? thisState;
   String? appName;
 
-  ///decorator things
+  /// Decorator things.
   BoxShapeDecorator? boxDecorator;
   TextInputDecorator? inputDecorator;
 

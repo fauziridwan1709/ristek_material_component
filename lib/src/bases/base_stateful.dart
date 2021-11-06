@@ -6,7 +6,7 @@ abstract class BaseStateful<T extends StatefulWidget> extends State<T>
   GlobalKey<RefreshIndicatorState>? refreshIndicatorKey;
   String? appName;
 
-  ///decorator things
+  /// Decorator things.
   BoxShapeDecorator? boxDecorator;
   TextInputDecorator? inputDecorator;
 

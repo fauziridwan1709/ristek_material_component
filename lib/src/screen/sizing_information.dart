@@ -6,6 +6,7 @@ enum DeviceScreenType {
 }
 
 class SizingInformation {
+  /// Creates a [SizingInformation].
   SizingInformation({
     required this.orientation,
     required this.deviceType,
@@ -13,8 +14,13 @@ class SizingInformation {
     required this.localWidgetSize,
   });
 
+  /// Specify device orientation
   final Orientation orientation;
+
+  /// Specify device type
   final DeviceScreenType deviceType;
+
+  /// Holds screen size info
   final Size screenSize;
   final Size localWidgetSize;
 

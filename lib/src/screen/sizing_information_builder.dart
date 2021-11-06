@@ -3,12 +3,15 @@ part of '_screen.dart';
 typedef SizeBuilder = Widget Function(
     BuildContext context, SizingInformation sizingInformation);
 
+/// A sizing builder widget.
 class SizingInformationBuilder extends StatelessWidget {
+  /// Creates a [SizingInformationBuilder].
   const SizingInformationBuilder({
     Key? key,
     required this.builder,
   }) : super(key: key);
 
+  /// Builder using [LayoutBuilder]
   final SizeBuilder builder;
 
   @override
@@ -33,7 +36,7 @@ class SizingInformationBuilder extends StatelessWidget {
     } else {
       deviceWidth = mediaQuery.size.width;
     }
-    //todo desktop
+    // TODO(paw): desktop version
     if (deviceWidth > 600) {
       return DeviceScreenType.tablet;
     }
