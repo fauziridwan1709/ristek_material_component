@@ -43,7 +43,7 @@ class AutoLayoutButton extends StatelessWidget {
     final enabled = onTap != null;
     final theme = Theme.of(context);
     return Container(
-      height: 40,
+      height: 50,
       width: double.infinity,
       decoration: BoxDecoration(
         color: enabled
@@ -64,7 +64,10 @@ class AutoLayoutButton extends StatelessWidget {
                   )
                 : Text(
                     text,
-                    style: textStyle ?? theme.textTheme.button,
+                    style: textStyle ??
+                        theme.textTheme.button?.copyWith(
+                          color: Colors.white,
+                        ),
                   ),
           ),
         ),
