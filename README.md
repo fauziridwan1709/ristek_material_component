@@ -4,7 +4,7 @@ A Material Component for Ulas Kelas Project Ristek Universitas Indonesia
 
 ## Getting Started
 
-![Alt text](/assets/design-system.png?raw=true "Design System")
+![Alt text](https://github.com/fauziridwan1709/ristek_material_component/blob/master/assets/design-system.png?raw=true "Design System")
 
 ### Primary Button
 ```dart
