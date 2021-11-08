@@ -2,20 +2,34 @@
 
 part of '_button.dart';
 
+/// A Ghost Button.
 class GhostButton extends StatelessWidget {
+  /// Creates A Ghost Button.
+  ///
+  /// the either both of [text] and [child] cannot be null or null.
   const GhostButton({
     Key? key,
     this.child,
     this.text,
     this.onPressed,
     this.borderRadius,
-  })  : assert(text == null || child == null, 'tardada'),
-        assert(child != null || text != null, 'tardada'),
+  })  : assert(text == null || child == null, 'One of them must be null.'),
+        assert(child != null || text != null, 'One of them must not be null.'),
         super(key: key);
 
+  /// If null describe this button is disabled.
+  ///
+  /// Defaults to null.
   final VoidCallback? onPressed;
+
+  /// Either [child] or [text] must not be null.
+  ///
+  /// Specify child for dynamic content.
   final Widget? child;
+
+  /// Whether button has text content.
   final String? text;
+
   final BorderRadius? borderRadius;
 
   @override

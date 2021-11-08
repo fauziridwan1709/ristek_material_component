@@ -74,4 +74,21 @@ class TextInputDecorator {
       focusedBorder: theme.inputDecorationTheme.focusedBorder,
     );
   }
+
+  InputDecoration input({String? hint, required BuildContext context}) {
+    final theme = Theme.of(context);
+    return _inputDecoration!.copyWith(
+      hintText: hint ?? 'Input',
+      fillColor: theme.inputDecorationTheme.fillColor,
+      filled: true,
+      hintStyle: theme.inputDecorationTheme.hintStyle,
+      contentPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 15),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(4),
+        borderSide: BorderSide(color: theme.disabledColor),
+      ),
+      enabledBorder: theme.inputDecorationTheme.enabledBorder,
+      focusedBorder: theme.inputDecorationTheme.focusedBorder,
+    );
+  }
 }

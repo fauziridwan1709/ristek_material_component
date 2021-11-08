@@ -2,9 +2,9 @@
 
 part of '_button.dart';
 
-/// A Filter Button
+/// A Filter Button.
 class FilterButton extends StatelessWidget {
-  /// Creates A Filter Button
+  /// Creates A Filter Button.
   ///
   /// the either both of [text] and [child] cannot be null or null.
   const FilterButton({
@@ -14,13 +14,23 @@ class FilterButton extends StatelessWidget {
     this.onPressed,
     this.hasFilter = false,
     this.borderRadius,
-  })  : assert(text == null || child == null, 'One of them must be null'),
-        assert(child != null || text != null, 'One of them must not be null'),
+  })  : assert(text == null || child == null, 'One of them must be null.'),
+        assert(child != null || text != null, 'One of them must not be null.'),
         super(key: key);
 
+  /// If null describe this button is disabled.
+  ///
+  /// Defaults to null.
   final VoidCallback? onPressed;
+
+  /// Either [child] or [text] must not be null.
+  ///
+  /// Specify child for dynamic content.
   final Widget? child;
+
+  /// Whether button has text content.
   final String? text;
+
   final bool hasFilter;
   final BorderRadiusGeometry? borderRadius;
 

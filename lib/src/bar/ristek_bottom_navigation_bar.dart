@@ -2,7 +2,9 @@
 
 part of '_bar.dart';
 
+/// A Ristek Custom Bottom Navigation Bar.
 class RistekBotNavBar extends StatefulWidget {
+  /// Creates A Ristek Bottom Navigation Bar.
   const RistekBotNavBar({
     Key? key,
     required this.onTap,

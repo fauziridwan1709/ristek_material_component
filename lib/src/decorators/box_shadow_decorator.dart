@@ -2,6 +2,7 @@
 
 part of '_decorators.dart';
 
+/// A Box Shadow Decorators.
 class BoxShadowDecorator {
   BoxShadowDecorator() {
     shadow = <BoxShadow>[];
@@ -9,6 +10,7 @@ class BoxShadowDecorator {
 
   List<BoxShadow>? shadow;
 
+  /// A default box shadow.
   List<BoxShadow> defaultShadow(BuildContext context) {
     final theme = Theme.of(context);
     shadow!.add(

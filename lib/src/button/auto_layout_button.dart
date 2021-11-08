@@ -3,11 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-/// A decorated text button that expands in size (width)
+/// A decorated text button that expands in size (width).
 class AutoLayoutButton extends StatelessWidget {
   /// Creates a [AutoLayoutButton].
   ///
-  /// the [text] argument must not be null
+  /// the [text] argument must not be null.
   const AutoLayoutButton({
     Key? key,
     required this.text,

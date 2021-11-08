@@ -2,7 +2,9 @@
 
 part of '_field.dart';
 
+/// A Search field
 class SearchField extends StatelessWidget {
+  /// Creates a search fields
   const SearchField({
     Key? key,
     required this.controller,
@@ -13,6 +15,11 @@ class SearchField extends StatelessWidget {
   }) : super(key: key);
 
   final String? hintText;
+
+  /// Controls the text being edited.
+  ///
+  /// If null, this widget will create its own [TextEditingController] and
+  /// initialize its [TextEditingController.text] with [initialValue].
   final TextEditingController controller;
   final VoidCallback? onClear;
   final FocusNode focusNode;
@@ -24,7 +31,10 @@ class SearchField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       focusNode: focusNode,
-      style: theme.textTheme.caption,
+      style: theme.textTheme.caption?.copyWith(
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+      ),
       onChanged: onChange,
       decoration: TextInputDecorator()
           .search(
