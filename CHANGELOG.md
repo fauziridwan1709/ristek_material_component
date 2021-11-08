@@ -11,3 +11,10 @@
 ### Added
 * The `CustomScaffold` class.
 * The `BoxShapeDecorator` class
+
+## 0.0.4
+## Added
+* The `Tag` class and enum.
+* The `InputField` class.
+* The `DotIndicator` class.
+* The `Messenger` class.

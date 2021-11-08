@@ -1,14 +1,42 @@
 # ristek_material_component
 
-A new Flutter project.
+A Material Component for Ulas Kelas Project Ristek Universitas Indonesia
 
 ## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+![Alt text](/assets/Design System.png?raw=true "Design System")
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+### Primary Button
+```dart
+PrimaryButton(
+	/// If you want to change the content of this button just unset [text] 
+	/// argument
+	/// 
+	/// change with 
+	/// child: SomeWidget()
+	text: 'Hello',
+	
+	// If you want disabled this button just unset [onPressed] argument
+	onPressed: () {},
+
+	/// Try other argument like [isLoading]
+)
+```
+
+### Secondary Button
+```dart
+SecondaryButton(
+	/// If you want to change the content of this button just unset [text] 
+	/// argument
+	/// 
+	/// change with 
+	/// child: SomeWidget()
+	text: 'Hello',
+	
+	// If you want disabled this button just unset [onPressed] argument
+	onPressed: () {},
+
+	/// Try other argument like [isLoading]
+)
+```
+
