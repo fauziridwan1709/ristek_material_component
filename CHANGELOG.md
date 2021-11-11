@@ -33,3 +33,11 @@
 
 ### Removed
 * thisState on Bases
+
+## 0.0.7
+### Added
+* The `SelectTag` class.
+
+### Updated
+* Add Validator on InputField
+* Change Tag Widget Default Padding

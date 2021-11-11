@@ -3,4 +3,3 @@
 import 'package:flutter/material.dart';
 
 part 'dot_indicator.dart';
-part 'tag.dart';

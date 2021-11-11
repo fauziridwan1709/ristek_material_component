@@ -1,6 +1,6 @@
 // Created by Muhamad Fauzi Ridwan on 08/11/21.
 
-part of '_indicator.dart';
+part of '_tag.dart';
 
 /// A TagStatus enum
 enum TagStatus {
@@ -30,9 +30,9 @@ class Tag extends StatelessWidget {
     final theme = Theme.of(context);
 
     return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 14,
-        vertical: 6,
+      padding: EdgeInsets.symmetric(
+        horizontal: state == TagStatus.normal ? 16 : 8,
+        vertical: state == TagStatus.normal ? 8 : 4,
       ),
       decoration: BoxDecoration(
         color: _mapColor(context, state),

@@ -65,7 +65,7 @@ class TextInputDecorator {
       fillColor: theme.inputDecorationTheme.fillColor,
       filled: true,
       hintStyle: theme.inputDecorationTheme.hintStyle,
-      contentPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 15),
+      contentPadding: const EdgeInsets.fromLTRB(24, 15, 0, 15),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
         borderSide: BorderSide(color: theme.disabledColor),
