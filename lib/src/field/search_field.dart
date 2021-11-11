@@ -12,6 +12,7 @@ class SearchField extends StatelessWidget {
     this.hintText,
     this.onClear,
     this.onChange,
+    this.onFieldSubmitted,
   }) : super(key: key);
 
   final String? hintText;
@@ -24,6 +25,7 @@ class SearchField extends StatelessWidget {
   final VoidCallback? onClear;
   final FocusNode focusNode;
   final Function(String)? onChange;
+  final ValueChanged<String>? onFieldSubmitted;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +37,7 @@ class SearchField extends StatelessWidget {
         fontSize: 14,
         fontWeight: FontWeight.w500,
       ),
+      onFieldSubmitted: onFieldSubmitted,
       onChanged: onChange,
       decoration: TextInputDecorator()
           .search(
@@ -42,7 +45,7 @@ class SearchField extends StatelessWidget {
             context: context,
           )
           .copyWith(
-            suffixIcon: focusNode.hasFocus
+            suffixIcon: focusNode.hasFocus || controller.text.isNotEmpty
                 ? InkWell(
                     onTap: onClear,
                     child: Icon(

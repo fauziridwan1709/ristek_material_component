@@ -1,6 +1,6 @@
 name: ristek_material_component
 description: Material Design Component for future Ristek Universitas Indonesia project
-version: 0.0.4
+version: 0.0.6
 repository: https://github.com/fauziridwan1709/ristek_material_component
 homepage:
 
@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_spinkit: ^5.1.0
-  states_rebuilder: ^4.0.0+1
+  states_rebuilder: ^5.0.0
   shared_preferences: ^2.0.6
   another_flushbar: ^1.10.25
 

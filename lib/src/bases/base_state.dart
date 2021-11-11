@@ -8,7 +8,6 @@ abstract class BaseState<T extends StatefulWidget,
     with Diagnosticable
     implements BaseStateReBuilder<K> {
   GlobalKey<RefreshIndicatorState>? refreshIndicatorKey;
-  ReactiveModel<K>? thisState;
   String? appName;
 
   /// Decorator things.
@@ -19,8 +18,6 @@ abstract class BaseState<T extends StatefulWidget,
   void initState() {
     super.initState();
     refreshIndicatorKey = GlobalKey<RefreshIndicatorState>();
-    thisState = Injector.getAsReactive<K>();
-
     appName = RistekMaterialSettings.appName;
     boxDecorator = BoxShapeDecorator();
     inputDecorator = TextInputDecorator();

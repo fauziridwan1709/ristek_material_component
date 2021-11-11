@@ -10,7 +10,6 @@ abstract class BasePaginationState<T extends StatefulWidget,
   GlobalKey<RefreshIndicatorState>? refreshIndicatorKey;
   ScrollController? scrollController;
   Completer<void>? completer;
-  ReactiveModel<K>? thisState;
   String? appName;
 
   /// Decorator things
@@ -24,7 +23,6 @@ abstract class BasePaginationState<T extends StatefulWidget,
     refreshIndicatorKey = GlobalKey<RefreshIndicatorState>();
     scrollController = ScrollController();
     scrollController!.addListener(_onScroll);
-    thisState = Injector.getAsReactive<K>();
     appName = RistekMaterialSettings.appName;
     boxDecorator = BoxShapeDecorator();
     inputDecorator = TextInputDecorator();

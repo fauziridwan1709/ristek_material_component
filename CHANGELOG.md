@@ -18,3 +18,18 @@
 * The `InputField` class.
 * The `DotIndicator` class.
 * The `Messenger` class.
+
+## 0.0.5
+### Update
+* Readme.md
+
+## 0.0.6
+### Added
+* Add loaders widget
+* Add Waiting view widget
+
+### Updated
+* Add On Field Submitted on Search Field
+
+### Removed
+* thisState on Bases
