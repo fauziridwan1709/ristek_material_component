@@ -41,3 +41,7 @@
 ### Updated
 * Add Validator on InputField
 * Change Tag Widget Default Padding
+
+## 0.0.8
+### Updated
+* Primary, Secondary, and Ghost Button

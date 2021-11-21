@@ -10,12 +10,16 @@ class AutoLayoutButton extends StatelessWidget {
   /// the [text] argument must not be null.
   const AutoLayoutButton({
     Key? key,
-    required this.text,
+    this.text,
     this.textStyle,
     this.isLoading = false,
     this.onTap,
     this.backgroundColor,
-  }) : super(key: key);
+    this.height,
+    this.child,
+  })  : assert(text == null || child == null, 'One of them must be null.'),
+        assert(child != null || text != null, 'One of them must not be null.'),
+        super(key: key);
 
   /// If non-null, the style to use for this text.
   ///
@@ -23,7 +27,7 @@ class AutoLayoutButton extends StatelessWidget {
   final TextStyle? textStyle;
 
   /// the text to display.
-  final String text;
+  final String? text;
 
   /// Whether this button in loading state.
   ///
@@ -36,14 +40,22 @@ class AutoLayoutButton extends StatelessWidget {
   ///
   /// If non-null, the backgroundColor to use for this button
   final Color? backgroundColor;
+
   final VoidCallback? onTap;
+
+  final double? height;
+
+  /// Either [child] or [text] must not be null.
+  ///
+  /// Specify child for dynamic content.
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
     final enabled = onTap != null;
     final theme = Theme.of(context);
     return Container(
-      height: 50,
+      height: height ?? 46,
       width: double.infinity,
       decoration: BoxDecoration(
         color: enabled
@@ -55,21 +67,23 @@ class AutoLayoutButton extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
           onTap: onTap,
-          child: Center(
-            child: isLoading
-                ? const SpinKitRing(
-                    color: Colors.white,
-                    size: 24,
-                    lineWidth: 4,
-                  )
-                : Text(
-                    text,
-                    style: textStyle ??
-                        theme.textTheme.button?.copyWith(
+          child: child != null
+              ? child
+              : Center(
+                  child: isLoading
+                      ? const SpinKitRing(
                           color: Colors.white,
+                          size: 24,
+                          lineWidth: 4,
+                        )
+                      : Text(
+                          text!,
+                          style: textStyle ??
+                              theme.textTheme.button?.copyWith(
+                                color: Colors.white,
+                              ),
                         ),
-                  ),
-          ),
+                ),
         ),
       ),
     );

@@ -19,9 +19,10 @@ class SelectTag extends StatelessWidget {
   /// Specify the label text
   final String label;
 
-  /// Whether
+  /// Whether widget selected.
   final bool isSelected;
 
+  /// if not enabled widget cant be tapped
   final bool enabled;
 
   final Function(bool?)? onChanged;

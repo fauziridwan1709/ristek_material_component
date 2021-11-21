@@ -2,7 +2,7 @@
 
 part of '_forms.dart';
 
-/// A Search field
+/// A Drop down field
 // class DropdownField extends StatelessWidget {
 //   /// Creates a search fields
 //   const DropdownField({

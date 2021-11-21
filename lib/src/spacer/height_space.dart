@@ -2,12 +2,15 @@
 
 part of '_spacer.dart';
 
+/// A Height Space Widget.
 class HeightSpace extends StatelessWidget implements Spacer {
+  /// Creates Height Space Widget.
   const HeightSpace(
     this.size, {
     Key? key,
   }) : super(key: key);
 
+  /// height size of [SizedBox]
   final double size;
 
   @override

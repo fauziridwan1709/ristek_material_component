@@ -14,6 +14,7 @@ class GhostButton extends StatelessWidget {
     this.onPressed,
     this.borderRadius,
     this.width,
+    this.padding,
   })  : assert(text == null || child == null, 'One of them must be null.'),
         assert(child != null || text != null, 'One of them must not be null.'),
         super(key: key);
@@ -42,6 +43,8 @@ class GhostButton extends StatelessWidget {
   /// if non-null, this box button will use specific width.
   final double? width;
 
+  final EdgeInsetsGeometry? padding;
+
   @override
   Widget build(BuildContext context) {
     final enabled = onPressed != null;
@@ -59,14 +62,17 @@ class GhostButton extends StatelessWidget {
           child: InkWell(
             onTap: () {},
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                text.toString(),
-                style: theme.textTheme.button?.copyWith(
-                  color:
-                      enabled ? theme.colorScheme.primary : theme.disabledColor,
-                ),
-              ),
+              padding: padding ?? EdgeInsets.all(8),
+              child: child != null
+                  ? child
+                  : Text(
+                      text.toString(),
+                      style: theme.textTheme.button?.copyWith(
+                        color: enabled
+                            ? theme.colorScheme.primary
+                            : theme.disabledColor,
+                      ),
+                    ),
             ),
           ),
         ),

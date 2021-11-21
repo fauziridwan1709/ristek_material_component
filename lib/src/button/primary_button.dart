@@ -14,6 +14,8 @@ class PrimaryButton extends StatelessWidget {
     this.onPressed,
     this.borderRadius,
     this.width,
+    this.height,
+    this.padding,
   })  : assert(text == null || child == null, 'One of them must be null.'),
         assert(child != null || text != null, 'One of them must not be null.'),
         super(key: key);
@@ -39,8 +41,13 @@ class PrimaryButton extends StatelessWidget {
   /// {@macro flutter.painting.BoxDecoration.clip}
   final BorderRadius? borderRadius;
 
+  /// if non-null, this box button will use specific height.
+  final double? height;
+
   /// if non-null, this box button will use specific width.
   final double? width;
+
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +55,7 @@ class PrimaryButton extends StatelessWidget {
     final theme = Theme.of(context);
     return Container(
       width: width,
+      // height: height ?? 46,
       decoration: BoxDecoration(
         color: enabled ? theme.colorScheme.primary : theme.disabledColor,
         borderRadius: borderRadius ?? BorderRadius.circular(6),
@@ -59,13 +67,15 @@ class PrimaryButton extends StatelessWidget {
           child: InkWell(
             onTap: onPressed,
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                text.toString(),
-                style: theme.textTheme.button?.copyWith(
-                  color: theme.colorScheme.background,
-                ),
-              ),
+              padding: padding ?? EdgeInsets.all(8),
+              child: child != null
+                  ? child
+                  : Text(
+                      text.toString(),
+                      style: theme.textTheme.button?.copyWith(
+                        color: theme.colorScheme.background,
+                      ),
+                    ),
             ),
           ),
         ),

@@ -2,12 +2,15 @@
 
 part of '_spacer.dart';
 
+/// A Width Space Widget.
 class WidthSpace extends StatelessWidget implements Spacer {
+  /// Creates Width Space Widget.
   const WidthSpace(
     this.size, {
     Key? key,
   }) : super(key: key);
 
+  /// Width space of [SizedBox]
   final double size;
 
   @override

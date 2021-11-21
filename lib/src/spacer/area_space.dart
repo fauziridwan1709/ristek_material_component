@@ -2,12 +2,15 @@
 
 part of '_spacer.dart';
 
+/// Area Space Widget.
 class AreaSpace extends StatelessWidget implements Spacer {
+  /// Creates Area Space Widget.
   const AreaSpace({
     Key? key,
     this.size,
   }) : super(key: key);
 
+  /// Area Size
   final double? size;
 
   @override
