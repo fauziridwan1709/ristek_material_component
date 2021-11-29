@@ -16,6 +16,7 @@ class PrimaryButton extends StatelessWidget {
     this.width,
     this.height,
     this.padding,
+    this.backgroundColor,
   })  : assert(text == null || child == null, 'One of them must be null.'),
         assert(child != null || text != null, 'One of them must not be null.'),
         super(key: key);
@@ -49,6 +50,9 @@ class PrimaryButton extends StatelessWidget {
 
   final EdgeInsetsGeometry? padding;
 
+  /// if null, use theme color.
+  final Color? backgroundColor;
+
   @override
   Widget build(BuildContext context) {
     final enabled = onPressed != null;
@@ -57,7 +61,9 @@ class PrimaryButton extends StatelessWidget {
       width: width,
       // height: height ?? 46,
       decoration: BoxDecoration(
-        color: enabled ? theme.colorScheme.primary : theme.disabledColor,
+        color: enabled
+            ? backgroundColor ?? theme.colorScheme.primary
+            : theme.disabledColor,
         borderRadius: borderRadius ?? BorderRadius.circular(6),
       ),
       child: ClipRRect(
@@ -75,6 +81,7 @@ class PrimaryButton extends StatelessWidget {
                       style: theme.textTheme.button?.copyWith(
                         color: theme.colorScheme.background,
                       ),
+                      textAlign: TextAlign.center,
                     ),
             ),
           ),

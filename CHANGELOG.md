@@ -45,3 +45,12 @@
 ## 0.0.8
 ### Updated
 * Primary, Secondary, and Ghost Button
+
+## 0.0.9
+### Updated
+* Secondary text color
+
+## 0.0.10
+### Updated
+* Change FlushBar margin
+* Add backgroundColor on Primary and Secondary Button

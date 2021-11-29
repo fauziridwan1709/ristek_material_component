@@ -1,6 +1,6 @@
 name: ristek_material_component
 description: Material Design Component for future Ristek Universitas Indonesia project
-version: 0.0.8
+version: 0.0.10
 repository: https://github.com/fauziridwan1709/ristek_material_component
 homepage:
 
@@ -25,7 +25,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
 
   uses-material-design: true
   assets:

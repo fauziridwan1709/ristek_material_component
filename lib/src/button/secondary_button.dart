@@ -17,6 +17,7 @@ class SecondaryButton extends StatelessWidget {
     this.thickness,
     this.height,
     this.padding,
+    this.backgroundColor,
   })  : assert(text == null || child == null, 'One of them must be null.'),
         assert(child != null || text != null, 'One of them must not be null.'),
         super(key: key);
@@ -52,6 +53,9 @@ class SecondaryButton extends StatelessWidget {
 
   final EdgeInsetsGeometry? padding;
 
+  /// if null, use theme color.
+  final Color? backgroundColor;
+
   @override
   Widget build(BuildContext context) {
     final enabled = onPressed != null;
@@ -63,7 +67,9 @@ class SecondaryButton extends StatelessWidget {
           color: Colors.transparent,
           borderRadius: borderRadius ?? BorderRadius.circular(6),
           border: Border.all(
-            color: enabled ? theme.colorScheme.primary : theme.disabledColor,
+            color: enabled
+                ? backgroundColor ?? theme.colorScheme.primary
+                : theme.disabledColor,
             width: thickness ?? 2,
           )),
       child: ClipRRect(
@@ -79,8 +85,11 @@ class SecondaryButton extends StatelessWidget {
                   : Text(
                       text.toString(),
                       style: theme.textTheme.button?.copyWith(
-                        color: theme.colorScheme.background,
+                        color: enabled
+                            ? backgroundColor ?? theme.colorScheme.primary
+                            : theme.disabledColor,
                       ),
+                textAlign: TextAlign.center,
                     ),
             ),
           ),
