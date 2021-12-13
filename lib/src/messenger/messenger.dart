@@ -53,7 +53,7 @@ class WarningMessenger {
     Flushbar<void>(
       icon: Icon(
         Icons.info,
-        color: theme.accentColor,
+        color: theme.secondaryHeaderColor,
         size: 22,
       ),
       flushbarPosition: FlushbarPosition.TOP,

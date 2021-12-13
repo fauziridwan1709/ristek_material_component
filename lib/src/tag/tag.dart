@@ -59,7 +59,7 @@ class Tag extends StatelessWidget {
       case TagStatus.approved:
         return Color(0xFF27AE60);
       case TagStatus.pending:
-        return theme.accentColor;
+        return theme.secondaryHeaderColor;
       case TagStatus.rejected:
         return theme.colorScheme.error;
     }
