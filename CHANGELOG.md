@@ -54,3 +54,17 @@
 ### Updated
 * Change FlushBar margin
 * Add backgroundColor on Primary and Secondary Button
+
+## 0.0.11
+### Updated
+* Remove accent color theme
+
+## 0.0.12
+### Updated
+* Remove accent color theme
+
+## 0.0.12
+### Updated
+* The `BasePaginationState` class
+
+

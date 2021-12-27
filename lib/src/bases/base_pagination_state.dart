@@ -7,8 +7,8 @@ abstract class BasePaginationState<T extends StatefulWidget,
         K extends FutureState<K, dynamic>> extends State<T>
     with Diagnosticable
     implements BaseStateReBuilder<K> {
-  GlobalKey<RefreshIndicatorState>? refreshIndicatorKey;
-  ScrollController? scrollController;
+  late GlobalKey<RefreshIndicatorState> refreshIndicatorKey;
+  late ScrollController scrollController;
   Completer<void>? completer;
   String? appName;
 
@@ -22,7 +22,7 @@ abstract class BasePaginationState<T extends StatefulWidget,
     completer = Completer<void>();
     refreshIndicatorKey = GlobalKey<RefreshIndicatorState>();
     scrollController = ScrollController();
-    scrollController!.addListener(_onScroll);
+    scrollController.addListener(_onScroll);
     appName = RistekMaterialSettings.appName;
     boxDecorator = BoxShapeDecorator();
     inputDecorator = TextInputDecorator();
@@ -31,7 +31,7 @@ abstract class BasePaginationState<T extends StatefulWidget,
     /// Initialize initializer as checker.
     Initializer(
       reactiveModel: Injector.getAsReactive<K>(),
-      rIndicator: refreshIndicatorKey!,
+      rIndicator: refreshIndicatorKey,
       state: Injector.getAsReactive<K>().state.getCondition(),
       cacheKey: Injector.getAsReactive<K>().state.cacheKey!,
     ).initialize();
@@ -48,11 +48,11 @@ abstract class BasePaginationState<T extends StatefulWidget,
   void onScroll();
 
   bool get _isBottom {
-    if (!scrollController!.hasClients) {
+    if (!scrollController.hasClients) {
       return false;
     }
-    final maxScroll = scrollController!.position.maxScrollExtent;
-    final currentScroll = scrollController!.offset;
+    final maxScroll = scrollController.position.maxScrollExtent;
+    final currentScroll = scrollController.offset;
     return currentScroll >= (maxScroll * 0.9);
   }
 
