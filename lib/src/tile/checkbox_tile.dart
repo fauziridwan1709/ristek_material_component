@@ -18,21 +18,26 @@ class CheckboxTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Row(
-      children: [
-        Checkbox(
-          value: value,
-          onChanged: onChanged,
-          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-          // visualDensity: VisualDensity.compact,
-          activeColor: theme.colorScheme.primary,
-        ),
-        const WidthSpace(6),
-        Text(
-          text.toString(),
-          style: theme.textTheme.caption,
-        ),
-      ],
+    return InkWell(
+      onTap: () {
+        onChanged.call(!value);
+      },
+      child: Row(
+        children: [
+          Checkbox(
+            value: value,
+            onChanged: onChanged,
+            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            // visualDensity: VisualDensity.compact,
+            activeColor: theme.colorScheme.primary,
+          ),
+          const WidthSpace(6),
+          Text(
+            text.toString(),
+            style: theme.textTheme.caption,
+          ),
+        ],
+      ),
     );
   }
 }

@@ -67,4 +67,9 @@
 ### Updated
 * The `BasePaginationState` class
 
+## 0.0.14
+### Updated
+* The `SelectTag` class
+* The `CheckboxTile` class
+
 

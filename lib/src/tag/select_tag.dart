@@ -64,7 +64,11 @@ class SelectTag extends StatelessWidget {
                 const WidthSpace(6),
                 Checkbox(
                   value: isSelected,
-                  onChanged: enabled ? (val) {} : null,
+                  onChanged: enabled
+                      ? (val) {
+                          onChanged?.call(!enabled);
+                        }
+                      : null,
                   materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   // visualDensity: VisualDensity.compact,
                   activeColor: theme.colorScheme.primary,
